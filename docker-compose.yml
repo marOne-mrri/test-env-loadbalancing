@@ -1,0 +1,20 @@
+services:
+  nginx: 
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./html:/usr/share/nginx/html
+    ports:
+      - "80:80"
+
+  dns:
+    build:
+      context: ./
+    container_name: dns
+    ports:
+      - 53:53
+      - 53:53/udp
+    volumes:
+      - ./dns:/etc/bind
+    command: named -c /etc/bind/named.conf -g -u named
