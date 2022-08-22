@@ -1,0 +1,16 @@
+$TTL 3600
+
+@   IN SOA ns.youcan.shop. admin.youcan.shop (
+        20191222        ; serial number
+        3600            ; refresh period
+        600             ; retry period
+        604800          ; expire time
+        1800 )          ; negative ttl
+
+@   IN NS ns.youcan.shop.
+
+ns  IN A    127.0.0.1
+
+test1  IN A    10.0.0.10
+test2  IN A    10.0.0.11
+test3  IN A    10.0.0.12
